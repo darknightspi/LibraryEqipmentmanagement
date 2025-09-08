@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <!-- Blue Strip at the top -->
+    <View
+        android:id="@+id/blueStrip"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Title: Library Equipment Management -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Library Equipment Management"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@color/blue"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/blueStrip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Add Department Button -->
+    <Button
+        android:id="@+id/btnAddDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Department"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:background="@drawable/blue_button_background"/>
+
+    <!-- RecyclerView for displaying departments -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDepartments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddDepartment"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

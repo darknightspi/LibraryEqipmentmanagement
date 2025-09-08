@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "371660632848",
+    "firebase_url": "https://library-equipment-management-default-rtdb.firebaseio.com",
+    "project_id": "library-equipment-management",
+    "storage_bucket": "library-equipment-management.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371660632848:android:07e08a3b2e99a58d192b95",
+        "android_client_info": {
+          "package_name": "com.ram.libraryeqipmentmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371660632848-9ch1asefh8sggtm99vu10qfhuvlh5pc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ram.libraryeqipmentmanagement",
+            "certificate_hash": "7a162748ed2e28ecab9cf1a4d1259fa65fa674ec"
+          }
+        },
+        {
+          "client_id": "371660632848-9ar1pe7f5chgctlvlqc6lr5ishn1b1gf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVMb19ncKmROVwgJLyxD9FuTcJdnw2nH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371660632848-9ar1pe7f5chgctlvlqc6lr5ishn1b1gf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

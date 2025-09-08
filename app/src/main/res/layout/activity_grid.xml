@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Grid Structure"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Input Fields Container -->
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Rows Input -->
+        <EditText
+            android:id="@+id/editTextRows"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter number of rows"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Columns Input -->
+        <EditText
+            android:id="@+id/editTextColumns"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter number of columns"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Create Button -->
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/equipmentGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:alignmentMode="alignBounds"
+        app:columnOrderPreserved="true"
+        app:rowOrderPreserved="true"
+        app:useDefaultMargins="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

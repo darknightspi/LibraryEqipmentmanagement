@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_library_drawable"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/gridTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipment Grid"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@drawable/blue_button_background"
+        android:elevation="4dp"
+        android:layout_marginBottom="20dp"/>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/equipmentGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"/>
+
+</LinearLayout> 

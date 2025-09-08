@@ -1,0 +1,101 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "departments": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      "$departmentId": {
+        ".validate": "newData.hasChildren(['name', 'description', 'createdAt', 'updatedAt'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+        },
+        "description": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0"
+        },
+        "updatedAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() >= data.child('createdAt').val()"
+        }
+      }
+    },
+    "libraries": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      "$libraryId": {
+        ".validate": "newData.hasChildren(['departmentId', 'name', 'rows', 'columns', 'createdAt', 'updatedAt'])",
+        "departmentId": {
+          ".validate": "newData.isString() && root.child('departments').child(newData.val()).exists()"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+        },
+        "rows": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= 100"
+        },
+        "columns": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= 100"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0"
+        },
+        "updatedAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() >= data.child('createdAt').val()"
+        }
+      },
+      ".indexOn": ["departmentId"]
+    },
+    "equipment": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      "$equipmentId": {
+        ".validate": "newData.hasChildren(['libraryId', 'name', 'status', 'specifications', 'row', 'column', 'createdAt', 'updatedAt'])",
+        "libraryId": {
+          ".validate": "newData.isString() && root.child('libraries').child(newData.val()).exists()"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+        },
+        "status": {
+          ".validate": "newData.isString() && (newData.val() === 'available' || newData.val() === 'in_use' || newData.val() === 'maintenance')"
+        },
+        "specifications": {
+          ".validate": "newData.isString() && newData.val().length <= 1000"
+        },
+        "row": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < root.child('libraries').child(data.child('libraryId').val()).child('rows').val()"
+        },
+        "column": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < root.child('libraries').child(data.child('libraryId').val()).child('columns').val()"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0"
+        },
+        "updatedAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() >= data.child('createdAt').val()"
+        }
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "role": {
+          ".validate": "newData.isString() && (newData.val() === 'admin' || newData.val() === 'user')"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$/i)"
+        }
+      }
+    },
+    "statistics": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    }
+  }
+} 
