@@ -70,6 +70,8 @@ These insights help administrators quickly identify issues.
 ---
 
 ## 📂 Project Structure
+
+``` text
 LibraryEquipmentManagement/
 │
 ├── app/
@@ -89,6 +91,8 @@ LibraryEquipmentManagement/
 │
 └── README.md
 └── Project documentation
+
+```
 
 ---
 
