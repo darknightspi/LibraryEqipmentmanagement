@@ -1,25 +1,26 @@
 # 📚 Library Equipment Management System
 ![Java](https://img.shields.io/badge/Java-Programming-red)
 ![Android](https://img.shields.io/badge/Android-Studio-green)
-![Database](https://img.shields.io/badge/SQLite-Database-blue)
+![Firebase](https://img.shields.io/badge/Firebase-Firestore-orange)
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
 ## 🔎 TL;DR (Quick Summary)
 - 📌 Software system to manage and monitor library equipment
 - 🏫 Designed for educational institutions
 - 📊 Tracks equipment status (working / non-working)
-- 📱 Built using Android Studio with SQLite database
-- 🛠 Tech: Java, Android Studio, SQLite
+- ☁ Uses Firebase Firestore for cloud-based data storage
+- 📱 Built using Android Studio
+- 🛠 Tech: Java, Android Studio, Firebase Firestore
 
 ---
 
 ## 🚀 Project Overview
 
-The **Library Equipment Management System** is a digital solution designed to manage and monitor equipment available in libraries or institutional labs.  
+The **Library Equipment Management System** is a digital solution designed to manage and monitor equipment available in libraries or institutional labs.
 
 The system allows administrators to track equipment, organize departments and libraries, and monitor the working status of devices.
 
-This application replaces manual record keeping with a **structured and efficient digital system**.
+All data is stored and synchronized using **Firebase Firestore**, enabling real-time cloud-based data management and easy scalability..
 
 ---
 
@@ -64,9 +65,9 @@ These insights help administrators quickly identify issues.
 
 - **Programming Language:** Java  
 - **Platform:** Android Studio  
-- **Database:** SQLite  
-- **UI:** Android XML layouts  
-
+- **Database:** Firebase Firestore  
+- **Backend Services:** Firebase  
+- **UI:** Android XML layouts
 ---
 
 ## 📂 Project Structure
@@ -98,11 +99,11 @@ LibraryEquipmentManagement/
 
 ## 🔮 Future Improvements
 
-- Cloud database integration
-- Equipment QR code scanning
-- Real-time monitoring dashboard
-- User authentication system
-- Multi-institution support
+- QR code scanning for equipment tracking
+- Advanced analytics dashboard
+- User authentication with Firebase Authentication
+- Multi-institution management
+- Real-time equipment monitoring
 
 ---
 
